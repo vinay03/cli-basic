@@ -2,8 +2,11 @@ package main
 
 import (
 	"cli-basic/cmd"
+	"log"
 )
 
 func main() {
-	cmd.Execute()
+	if err := cmd.RootCmd.Execute(); err != nil {
+		log.Fatal(err)
+	}
 }
