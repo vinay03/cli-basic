@@ -17,6 +17,9 @@ var (
 			intValue, _ := c.Flags().GetBool("int")
 			fmt.Println("int value: ", intValue)
 
+			float32Value, _ := c.Flags().GetBool("float")
+			fmt.Println("float32 value: ", float32Value)
+
 		},
 	}
 )
@@ -30,6 +33,10 @@ func init() {
 	// int data
 	var intVar int
 	testCmd.Flags().IntVarP(&intVar, "int", "i", 0, "Check a int value")
+
+	// float data
+	var float32Var float32
+	testCmd.Flags().Float32VarP(&float32Var, "float", "f", 0.0, "check a float32 value")
 
 	RootCmd.AddCommand(testCmd)
 
